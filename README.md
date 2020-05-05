@@ -1,1 +1,1 @@
-# SAH
+# SmartAgriHubs repository
