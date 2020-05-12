@@ -1,0 +1,167 @@
+@prefix yso: <http://www.yso.fi/onto/yso/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix isothes: <http://purl.org/iso25964/skos-thes#> .
+@prefix ysa: <http://www.yso.fi/onto/ysa/> .
+@prefix koko: <http://www.yso.fi/onto/koko/> .
+@prefix allars: <http://www.yso.fi/onto/allars/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns0: <http://www.yso.fi/onto/yso-meta/> .
+
+yso:p26865
+  skos:prefLabel "kytöviljely"@fi, "burn-beat cultivation"@en, "kyttlandsbruk"@sv ;
+  a <http://www.yso.fi/onto/yso-meta/Concept>, skos:Concept ;
+  skos:broader yso:p593 .
+
+yso:p14642
+  skos:prefLabel "biodynamisk odling"@sv, "biodynaaminen viljely"@fi, "biodynamic agriculture"@en ;
+  a <http://www.yso.fi/onto/yso-meta/Concept>, skos:Concept ;
+  skos:broader yso:p593 .
+
+yso:p27683
+  skos:prefLabel "hiekkaviljely"@fi, "sand culture"@en, "sandodling"@sv ;
+  a <http://www.yso.fi/onto/yso-meta/Concept>, skos:Concept ;
+  skos:broader yso:p593 .
+
+yso:p13312
+  skos:prefLabel "växthusodling"@sv, "kasvihuoneviljely"@fi, "greenhouse cultivation"@en ;
+  a <http://www.yso.fi/onto/yso-meta/Concept>, skos:Concept ;
+  skos:broader yso:p593 .
+
+yso:p13823
+  skos:prefLabel "ploughless farming"@en, "plöjningsfri odling"@sv, "auraton viljely"@fi ;
+  a <http://www.yso.fi/onto/yso-meta/Concept>, skos:Concept ;
+  skos:broader yso:p593 .
+
+<http://www.yso.fi/onto/yso-meta/Concept>
+  rdfs:label "Allmänbegrepp"@sv, "Yleiskäsite"@fi, "General concept"@en ;
+  a owl:Class .
+
+yso:p21787
+  skos:prefLabel "växtföljd"@sv, "viljelykierto"@fi, "crop rotation"@en ;
+  a <http://www.yso.fi/onto/yso-meta/Concept>, skos:Concept ;
+  skos:broader yso:p593 .
+
+yso:p24995
+  skos:prefLabel "agroforestry"@en, "trädjordbruk"@sv, "peltometsäviljely"@fi ;
+  a <http://www.yso.fi/onto/yso-meta/Concept>, skos:Concept ;
+  skos:broader yso:p593 .
+
+yso:p3545
+  skos:prefLabel "svedjebruk"@sv, "kaskiviljely"@fi, "slash-and-burn cultivation"@en ;
+  a <http://www.yso.fi/onto/yso-meta/Concept>, skos:Concept ;
+  skos:broader yso:p593 .
+
+yso:p26528
+  skos:prefLabel "22 Maatalous. Maanviljely. Puutarhanhoito. Kotieläintalous"@fi, "22 Agriculture. Farming. Horticulture. Animal Husbandry"@en, "22 Lantbruk. Jordbruk. Trädgårdsskötsel. Husdjursskötsel"@sv ;
+  a isothes:ConceptGroup, skos:Collection ;
+  skos:member yso:p593 .
+
+yso:p20484
+  skos:prefLabel "precision farming"@en, "precisionsodling"@sv, "täsmäviljely"@fi ;
+  a <http://www.yso.fi/onto/yso-meta/Concept>, skos:Concept ;
+  skos:broader yso:p593 .
+
+yso:p1439
+  skos:prefLabel "ekologisk odling"@sv, "organic cultivation"@en, "luonnonmukainen viljely"@fi ;
+  a <http://www.yso.fi/onto/yso-meta/Concept>, skos:Concept ;
+  skos:broader yso:p593 .
+
+yso:p593
+  skos:narrower yso:p17965, yso:p14642, yso:p29426, yso:p18935, yso:p24995, yso:p17247, yso:p1439, yso:p2668, yso:p20484, yso:p13312, yso:p13823, yso:p17748, yso:p27683, yso:p3545, yso:p21787, yso:p11328, yso:p13116, yso:p592, yso:p19441, yso:p26865, yso:p22934, yso:p26866 ;
+  a skos:Concept, <http://www.yso.fi/onto/yso-meta/Concept> ;
+  skos:related yso:p11482, yso:p27874 ;
+  skos:hiddenLabel "odlingsmetod"@sv, "viljelymenetelmä"@fi, "cultivation method"@en ;
+  skos:prefLabel "viljelymenetelmät"@fi, "odlingsmetoder"@sv, "cultivation methods"@en ;
+  skos:exactMatch ysa:Y100259, koko:p32793, allars:Y23743 ;
+  skos:broader yso:p1913 ;
+  dc:modified "2020-01-25"^^xsd:date ;
+  dc:created "1989-11-01"^^xsd:date ;
+  skos:inScheme yso: ;
+  ns0:singularPrefLabel "cultivation method"@en, "odlingsmetod"@sv, "viljelymenetelmä"@fi .
+
+ns0:singularPrefLabel
+  rdfs:subPropertyOf skos:hiddenLabel ;
+  rdfs:label "föredragen term i singular"@sv, "käytettävän termin yksikkömuoto"@fi, "singular preferred term"@en .
+
+yso:p17247
+  skos:prefLabel "täckodling"@sv, "kateviljely"@fi, "no-dig gardening"@en ;
+  a ns0:Concept, skos:Concept ;
+  skos:broader yso:p593 .
+
+yso:
+  rdfs:label "ALLFO - Allmän finländsk ontologi"@sv, "YSO - Yleinen suomalainen ontologia"@fi, "YSO - General Finnish ontology"@en ;
+  a skos:ConceptScheme .
+
+yso:p19441
+  skos:prefLabel "rotational cropping"@en, "växelbruk"@sv, "vuoroviljely"@fi ;
+  a ns0:Concept, skos:Concept ;
+  skos:broader yso:p593 .
+
+yso:p22934
+  skos:prefLabel "blandad odling"@sv, "sekaviljely"@fi, "intercropping"@en ;
+  a ns0:Concept, skos:Concept ;
+  skos:broader yso:p593 .
+
+yso:p592
+  skos:prefLabel "field cropping"@en, "åkerbruk"@sv, "peltoviljely"@fi ;
+  a ns0:Concept, skos:Concept ;
+  skos:broader yso:p593 .
+
+yso:p11328
+  skos:prefLabel "trädning (odlingsmetoder)"@sv, "kesannointi"@fi, "fallowing"@en ;
+  a ns0:Concept, skos:Concept ;
+  skos:broader yso:p593 .
+
+yso:p17748
+  skos:prefLabel "open-field production"@en, "frilandsodling"@sv, "avomaaviljely"@fi ;
+  a ns0:Concept, skos:Concept ;
+  skos:broader yso:p593 .
+
+yso:p18935
+  skos:prefLabel "samodling"@sv, "päällekkäisviljely"@fi, "relay intercropping"@en ;
+  a ns0:Concept, skos:Concept ;
+  skos:broader yso:p593 .
+
+yso:p17965
+  skos:prefLabel "terrace cultivation"@en, "terrassodling"@sv, "pengerviljely"@fi ;
+  a ns0:Concept, skos:Concept ;
+  skos:broader yso:p593 .
+
+yso:p2668
+  skos:prefLabel "vallodling"@sv, "nurmiviljely"@fi, "grassland farming"@en ;
+  a ns0:Concept, skos:Concept ;
+  skos:broader yso:p593 .
+
+yso:p13116
+  skos:prefLabel "odling i torv"@sv, "turveviljely"@fi, "peat cultivation"@en ;
+  a ns0:Concept, skos:Concept ;
+  skos:broader yso:p593 .
+
+yso:p27874
+  skos:prefLabel "viljelykokeet"@fi, "cultivation tests"@en, "odlingsförsök"@sv ;
+  a ns0:Concept, skos:Concept ;
+  skos:related yso:p593 .
+
+yso:p26866
+  skos:prefLabel "suoviljely"@fi, "peatland agriculture"@en, "mossodling"@sv ;
+  a ns0:Concept, skos:Concept ;
+  skos:broader yso:p593 .
+
+yso:p29426
+  skos:prefLabel "hydrokultur"@sv, "hydroviljely"@fi, "hydroponics"@en ;
+  a ns0:Concept, skos:Concept ;
+  skos:broader yso:p593 .
+
+yso:p11482
+  skos:prefLabel "crop cultivation"@en, "växtodling"@sv, "kasvinviljely"@fi ;
+  a ns0:Concept, skos:Concept ;
+  skos:related yso:p593 .
+
+yso:p1913
+  skos:prefLabel "metoder"@sv, "menetelmät"@fi, "methods"@en ;
+  a ns0:Concept, skos:Concept ;
+  skos:narrower yso:p593 .
+

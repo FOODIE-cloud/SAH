@@ -1,0 +1,73 @@
+@prefix yso: <http://www.yso.fi/onto/yso/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix isothes: <http://purl.org/iso25964/skos-thes#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix allars: <http://www.yso.fi/onto/allars/> .
+@prefix ysa: <http://www.yso.fi/onto/ysa/> .
+@prefix koko: <http://www.yso.fi/onto/koko/> .
+@prefix ns0: <http://www.yso.fi/onto/yso-meta/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+yso:p26530
+  skos:prefLabel "30 Kemianteollisuus. Keraaminen teollisuus. Lasiteollisuus. Muoviteollisuus. Kumiteollisuus"@fi, "30 Chemicals Industry. Ceramics Industry. Glass Industry. Plastic Industry. Rubber Industry"@en, "30 Kemisk industri. Keramisk industri. Glasindustri. Plastindustri. Gummiindustri"@sv ;
+  a isothes:ConceptGroup, skos:Collection ;
+  skos:member yso:p7756 .
+
+yso:
+  rdfs:label "ALLFO - Allmän finländsk ontologi"@sv, "YSO - Yleinen suomalainen ontologia"@fi, "YSO - General Finnish ontology"@en ;
+  a skos:ConceptScheme .
+
+yso:p2359
+  skos:prefLabel "miljögifter"@sv, "ympäristömyrkyt"@fi, "environmental toxins"@en ;
+  a <http://www.yso.fi/onto/yso-meta/Concept>, skos:Concept ;
+  skos:related yso:p7756 .
+
+yso:p7757
+  skos:prefLabel "kemikalier"@sv, "kemikaalit"@fi, "chemicals"@en ;
+  a <http://www.yso.fi/onto/yso-meta/Concept>, skos:Concept ;
+  skos:narrower yso:p7756 .
+
+yso:p5544
+  skos:prefLabel "commercial fertilizer"@en, "konstgödsel"@sv, "väkilannoitteet"@fi ;
+  a <http://www.yso.fi/onto/yso-meta/Concept>, skos:Concept ;
+  skos:broader yso:p7756 .
+
+yso:p10441
+  skos:prefLabel "bekämpningsmedel"@sv, "torjunta-aineet"@fi, "pesticides"@en ;
+  a <http://www.yso.fi/onto/yso-meta/Concept>, skos:Concept ;
+  skos:broader yso:p7756 .
+
+yso:p26528
+  skos:prefLabel "22 Maatalous. Maanviljely. Puutarhanhoito. Kotieläintalous"@fi, "22 Agriculture. Farming. Horticulture. Animal Husbandry"@en, "22 Lantbruk. Jordbruk. Trädgårdsskötsel. Husdjursskötsel"@sv ;
+  a isothes:ConceptGroup, skos:Collection ;
+  skos:member yso:p7756 .
+
+yso:p26560
+  skos:prefLabel "18 Naturskydd. Miljövård. Miljö. Avfall"@sv, "18 Luonnonsuojelu. Ympäristönsuojelu. Ympäristö. Jätteet"@fi, "18 Nature Protection. Environmental Conservation. Environment. Waste"@en ;
+  a isothes:ConceptGroup, skos:Collection ;
+  skos:member yso:p7756 .
+
+<http://www.yso.fi/onto/yso-meta/Concept>
+  rdfs:label "Allmänbegrepp"@sv, "Yleiskäsite"@fi, "General concept"@en ;
+  a owl:Class .
+
+<http://www.yso.fi/onto/yso-meta/singularPrefLabel>
+  rdfs:subPropertyOf skos:hiddenLabel ;
+  rdfs:label "föredragen term i singular"@sv, "käytettävän termin yksikkömuoto"@fi, "singular preferred term"@en .
+
+yso:p7756
+  skos:exactMatch allars:Y21811, ysa:Y97210, koko:p30858 ;
+  skos:prefLabel "agricultural chemicals"@en, "maatalouskemikaalit"@fi, "lantbrukskemikalier"@sv ;
+  skos:related yso:p2359 ;
+  skos:hiddenLabel "agricultural chemical"@en, "maatalouskemikaali"@fi, "lantbrukskemikalie"@sv ;
+  skos:narrower yso:p5544, yso:p10441 ;
+  skos:broader yso:p7757 ;
+  ns0:singularPrefLabel "lantbrukskemikalie"@sv, "maatalouskemikaali"@fi, "agricultural chemical"@en ;
+  a ns0:Concept, skos:Concept ;
+  skos:inScheme yso: ;
+  dc:created "1985-01-01"^^xsd:date ;
+  dc:modified "2020-01-25"^^xsd:date ;
+  skos:closeMatch <http://id.loc.gov/authorities/subjects/sh85002279> .
+

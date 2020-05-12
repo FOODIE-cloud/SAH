@@ -1,0 +1,184 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix plantcat: <http://data.europa.eu/dph/def/plantcat#> .
+@base <http://data.europa.eu/dph/def/plantcat#> .
+
+<http://data.europa.eu/dph/def/plantcat#> rdf:type owl:Ontology ;
+                                           owl:imports <http://data.europa.eu/dph/def/linnaean#> ;
+                                           <http://purl.org/dc/terms/creator> <https://www.linkedin.com/in/giuseppe-mazzola-24150212> ,
+                                                                              <https://www.linkedin.com/in/guillermo-e-5a821056/> ;
+                                           <http://purl.org/dc/terms/contributor> "Johan Bosschaert" ;
+                                           rdfs:label "Common Catalogue Ontology"@en ;
+                                           rdfs:seeAlso <https://ec.europa.eu/food/plant/plant_propagation_material/plant_variety_catalogues_databases_en> ;
+                                           owl:versionInfo "4.1"@en ;
+                                           rdfs:label "Agricultural and Vegetable Catalogue Ontology"@en ;
+                                           owl:versionInfo """Changes from 3.0 to 4.1:
+- Major update, it practically changes the whole model.
+- Removed Denomination class, its related data is represented now through rdfs:label property on the related lin:Varietas.
+- Modified how the information about the address is modelled: switched from VCard to Schema.org.
+- Removed the classes related to the Linnaean taxonomy, now importing its own ontology.
+- Removed some properties used for internal purposes.
+- Several other minor changes.
+- Added or changed the descriptions for all the resources defined in this ontology."""@en ;
+                                           rdfs:comment "This ontology is used to define the information of the Common Catalogue of varieties of agricultural and horticultural plant species."@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://data.europa.eu/dph/def/plantcat#catalogueType
+plantcat:catalogueType rdf:type owl:ObjectProperty ,
+                                owl:FunctionalProperty ;
+                       rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <http://www.w3.org/2004/02/skos/core#inScheme> ;
+                                    owl:hasValue plantcat:CatalogueTypeConceptScheme
+                                  ] ;
+                       rdfs:comment """Type of catalogue linked to a resource.
+
+This could be either Agricultural or Horticultural."""@en ;
+                       rdfs:label "catalogue type"@en .
+
+
+###  http://data.europa.eu/dph/def/plantcat#dynamicProperty
+plantcat:dynamicProperty rdf:type owl:ObjectProperty ;
+                         rdfs:comment """Super-property of all the dynamic properties.
+
+A dynamic property is a property created by an automatic process by using information stored in a database. It is part of the model, but cannot be described in the ontology as it is stored in a database and could change over time."""@en ;
+                         rdfs:label "dynamic property"@en .
+
+
+###  http://data.europa.eu/dph/def/plantcat#isAbout
+plantcat:isAbout rdf:type owl:ObjectProperty ;
+                 rdfs:domain [ rdf:type owl:Class ;
+                               owl:unionOf ( <http://data.europa.eu/dph/def/linnaean#Varietas>
+                                             plantcat:Maintenance
+                                           )
+                             ] ;
+                 rdfs:range plantcat:Maintainer ;
+                 rdfs:comment "Resource related with a maintenance."@en ;
+                 rdfs:label "is about"@en .
+
+
+###  http://data.europa.eu/dph/def/plantcat#maintains
+plantcat:maintains rdf:type owl:ObjectProperty ;
+                   rdfs:domain plantcat:Maintainer ;
+                   rdfs:range <http://data.europa.eu/dph/def/linnaean#Varietas> ;
+                   rdfs:comment "Register of an organization as a maintainer of a certain variety."@en ;
+                   rdfs:label "maintains"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#inScheme
+<http://www.w3.org/2004/02/skos/core#inScheme> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://data.europa.eu/dph/def/plantcat#code
+plantcat:code rdf:type owl:DatatypeProperty ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( <http://data.europa.eu/dph/def/linnaean#Species>
+                                          <http://data.europa.eu/dph/def/linnaean#Subspecies>
+                                        )
+                          ] ;
+              rdfs:comment "Code given to a species or subspecies in the Common Catalogue."@en ;
+              rdfs:label "Common Catalogue code"@en .
+
+
+###  http://data.europa.eu/dph/def/plantcat#deleted
+plantcat:deleted rdf:type owl:DatatypeProperty ;
+                 rdfs:domain [ rdf:type owl:Class ;
+                               owl:unionOf ( <http://data.europa.eu/dph/def/linnaean#Varietas>
+                                             plantcat:Maintainer
+                                           )
+                             ] ;
+                 rdfs:range xsd:boolean ;
+                 rdfs:comment """Indicates if the variety or the maintainer is no longer valid.
+
+This means it that once it was valid but at some point it was unregistered from the Common Catalogue."""@en ;
+                 rdfs:label "deleted"@en .
+
+
+###  http://data.europa.eu/dph/def/plantcat#lastUpdate
+plantcat:lastUpdate rdf:type owl:DatatypeProperty ;
+                    rdfs:range xsd:date ;
+                    rdfs:comment "Date of the last publication in the Common Catalogue that modified the status of a Variety."@en ;
+                    rdfs:label "last update"@en .
+
+
+###  http://data.europa.eu/dph/def/plantcat#nationalId
+plantcat:nationalId rdf:type owl:DatatypeProperty ;
+                    rdfs:domain plantcat:Maintainer ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment """Id of a maintainer in a member state.
+
+This code is not unique for all the maintainers of the Common Catalogue. This code is unique for each maintainer of a single member state."""@en ;
+                    rdfs:label "Common Catalogue national id"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://data.europa.eu/dph/def/plantcat#Maintainer
+plantcat:Maintainer rdf:type owl:Class ;
+                    rdfs:comment """Organization that stores a seed of a plant variety.
+
+The maintainer is responsible to keep the variety true to itself, i.e. make sure the variety survives and that it is the same variety."""@en ;
+                    rdfs:label "maintainer"@en .
+
+
+###  http://data.europa.eu/dph/def/plantcat#Maintenance
+plantcat:Maintenance rdf:type owl:Class ;
+                     rdfs:comment """Change performed by a country in the Common Catalogue.
+
+The maintenance relates a variety, the maintainer of the variety and the notifying member state.
+
+The maintenance include the changes the variety went through time, these are usually the admission, deletion, modification or market extension of the seed. It also include the denomination of the variety within the country that reported the change."""@en ;
+                     rdfs:label "maintenance"@en ;
+                     rdfs:seeAlso <https://ec.europa.eu/food/plant/plant_propagation_material/plant_variety_catalogues_databases_en> .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class .
+
+
+###  http://www.w3.org/2004/02/skos/core#ConceptScheme
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://data.europa.eu/dph/def/plantcat#CatalogueTypeConceptScheme
+plantcat:CatalogueTypeConceptScheme rdf:type owl:NamedIndividual ,
+                                             <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

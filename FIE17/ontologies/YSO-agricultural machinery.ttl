@@ -1,0 +1,89 @@
+@prefix yso: <http://www.yso.fi/onto/yso/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns0: <http://www.yso.fi/onto/yso-meta/> .
+@prefix ysa: <http://www.yso.fi/onto/ysa/> .
+@prefix allars: <http://www.yso.fi/onto/allars/> .
+@prefix koko: <http://www.yso.fi/onto/koko/> .
+@prefix isothes: <http://purl.org/iso25964/skos-thes#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+yso:
+  rdfs:label "ALLFO - Allmän finländsk ontologi"@sv, "YSO - Yleinen suomalainen ontologia"@fi, "YSO - General Finnish ontology"@en ;
+  a skos:ConceptScheme .
+
+yso:p8843
+  skos:prefLabel "utfodringsapparater"@sv, "ruokintalaitteet"@fi, "feeding devices"@en ;
+  a <http://www.yso.fi/onto/yso-meta/Concept>, skos:Concept ;
+  skos:broader yso:p8844 .
+
+yso:p18656
+  skos:prefLabel "såningsmaskiner"@sv, "kylvökoneet"@fi, "sowing machines"@en ;
+  a <http://www.yso.fi/onto/yso-meta/Concept>, skos:Concept ;
+  skos:broader yso:p8844 .
+
+yso:p9230
+  skos:prefLabel "traktorer"@sv, "traktorit"@fi, "tractors"@en ;
+  a <http://www.yso.fi/onto/yso-meta/Concept>, skos:Concept ;
+  skos:related yso:p8844 .
+
+yso:p10634
+  skos:prefLabel "skördetröskor"@sv, "leikkuupuimurit"@fi, "combine harvesters"@en ;
+  a <http://www.yso.fi/onto/yso-meta/Concept>, skos:Concept ;
+  skos:broader yso:p8844 .
+
+yso:p8844
+  skos:narrower yso:p10634, yso:p18656, yso:p8088, yso:p8843, yso:p11945 ;
+  skos:hiddenLabel "maatalouskone"@fi, "jordbruksmaskin"@sv, "lantbruksmaskin"@sv ;
+  skos:inScheme yso: ;
+  dc:created "1986-08-01"^^xsd:date ;
+  ns0:singularAltLabel "lantbruksmaskin"@sv ;
+  skos:prefLabel "jordbruksmaskiner"@sv, "maatalouskoneet"@fi, "agricultural machinery"@en ;
+  skos:closeMatch <http://id.loc.gov/authorities/subjects/sh85002361> ;
+  ns0:singularPrefLabel "jordbruksmaskin"@sv, "maatalouskone"@fi ;
+  a skos:Concept, ns0:Concept ;
+  skos:exactMatch ysa:Y97211, allars:Y20384, koko:p37055 ;
+  skos:altLabel "lantbruksmaskiner"@sv ;
+  dc:modified "2020-01-25"^^xsd:date ;
+  skos:related yso:p9228, yso:p9230 ;
+  skos:broader yso:p2005 .
+
+yso:p11945
+  skos:prefLabel "mjölkmaskiner"@sv, "lypsykoneet"@fi, "milking machines"@en ;
+  a ns0:Concept, skos:Concept ;
+  skos:broader yso:p8844 .
+
+yso:p26528
+  skos:prefLabel "22 Maatalous. Maanviljely. Puutarhanhoito. Kotieläintalous"@fi, "22 Agriculture. Farming. Horticulture. Animal Husbandry"@en, "22 Lantbruk. Jordbruk. Trädgårdsskötsel. Husdjursskötsel"@sv ;
+  a isothes:ConceptGroup, skos:Collection ;
+  skos:member yso:p8844 .
+
+ns0:singularAltLabel
+  rdfs:subPropertyOf skos:hiddenLabel ;
+  rdfs:label "hänvisningsterm i singular"@sv, "ohjaustermin yksikkömuoto"@fi, "singular entry term"@en .
+
+yso:p8088
+  skos:prefLabel "soil cultivators"@en, "jordbearbetningsmaskiner"@sv, "maanmuokkauskoneet"@fi ;
+  a ns0:Concept, skos:Concept ;
+  skos:broader yso:p8844 .
+
+ns0:Concept
+  rdfs:label "Allmänbegrepp"@sv, "Yleiskäsite"@fi, "General concept"@en ;
+  a owl:Class .
+
+ns0:singularPrefLabel
+  rdfs:subPropertyOf skos:hiddenLabel ;
+  rdfs:label "föredragen term i singular"@sv, "käytettävän termin yksikkömuoto"@fi, "singular preferred term"@en .
+
+yso:p9228
+  skos:prefLabel "flishuggar"@sv, "hakkurit"@fi, "chippers"@en ;
+  a ns0:Concept, skos:Concept ;
+  skos:related yso:p8844 .
+
+yso:p2005
+  skos:prefLabel "maskiner"@sv, "koneet"@fi, "machines"@en ;
+  a ns0:Concept, skos:Concept ;
+  skos:narrower yso:p8844 .
+

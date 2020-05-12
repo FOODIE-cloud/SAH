@@ -1,0 +1,739 @@
+@prefix : <http://www.cropontology.org/ontology/CO_321/Wheat> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@base <http://www.cropontology.org/ontology/CO_321/Wheat> .
+
+<http://www.cropontology.org/ontology/CO_321/Wheat> rdf:type owl:Ontology ;
+                                                    dct:description "This is a profile of the original Wheat ontology (http://www.cropontology.org/ontology/CO_321/Wheat), which was created by copying only the relevant terms for the Flagship Innovation Experiment Nr.17 (DSS for optimizing ferlizers) of the SmartAgriHubs project. Ackowledgements stay to original authors and contributors" ;
+                                                    owl:versionInfo "09-10-2019" .
+
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.cropontology.org/rdf/acronym
+<http://www.cropontology.org/rdf/acronym> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+<http://www.w3.org/2004/02/skos/core#altLabel> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#broaderTransitive
+<http://www.w3.org/2004/02/skos/core#broaderTransitive> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.cropontology.org/rdf/Computation
+<http://www.cropontology.org/rdf/Computation> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://www.cropontology.org/rdf/Method> ;
+                                              <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/Method> .
+
+
+###  http://www.cropontology.org/rdf/Measurement
+<http://www.cropontology.org/rdf/Measurement> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://www.cropontology.org/rdf/Method> ;
+                                              <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/Method> .
+
+
+###  http://www.cropontology.org/rdf/Method
+<http://www.cropontology.org/rdf/Method> rdf:type owl:Class .
+
+
+###  http://www.cropontology.org/rdf/Numerical
+<http://www.cropontology.org/rdf/Numerical> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://www.cropontology.org/rdf/Scale> ;
+                                            <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/Scale> .
+
+
+###  http://www.cropontology.org/rdf/Scale
+<http://www.cropontology.org/rdf/Scale> rdf:type owl:Class .
+
+
+###  http://www.cropontology.org/rdf/Variable
+<http://www.cropontology.org/rdf/Variable> rdf:type owl:Class .
+
+
+###  http://www.cropontology.org/rdf/CO_321:ROOT
+<http://www.cropontology.org/rdf/CO_321:ROOT> rdf:type owl:Class ;
+                                              rdfs:label "Wheat trait"@en ;
+                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "Wheat trait"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000005
+<http://www.cropontology.org/rdf/CO_321:0000005> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "BM"@en ;
+                                                 rdfs:label "Aboveground biomass at maturity"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#altLabel> "Biological yield"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "All above-ground biomass at maturity."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Aboveground biomass at maturity"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000009
+<http://www.cropontology.org/rdf/CO_321:0000009> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "ErlVig"@en ;
+                                                 rdfs:label "Plant early vigour"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#altLabel> " Plant early vigor"@en ,
+                                                                                                "Seedling vigour"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Capacity of a seedling or plant to grow vegetatively in early stages of development."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Plant early vigour"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000012
+<http://www.cropontology.org/rdf/CO_321:0000012> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "GMoi"@en ;
+                                                 rdfs:label "Grain moisture content"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Moisture content of grain."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Grain moisture content"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000013
+<http://www.cropontology.org/rdf/CO_321:0000013> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "GY"@en ;
+                                                 rdfs:label "Grain yield"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Amount (weight) of grains that was harvested."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Grain yield"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000014
+<http://www.cropontology.org/rdf/CO_321:0000014> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "GrndCov"@en ;
+                                                 rdfs:label "Crop ground cover"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Crop ground cover, or the percentage of soil surface covered by plant foliage."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Crop ground cover"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000015
+<http://www.cropontology.org/rdf/CO_321:0000015> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "GrwHabit"@en ;
+                                                 rdfs:label "Plant growth habit"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "The growth habit of the plant whether erect/semi-erect/semi-spreading/spreading/prostrate."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Plant growth habit"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000017
+<http://www.cropontology.org/rdf/CO_321:0000017> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "GN"@en ;
+                                                 rdfs:label "Grain number"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#altLabel> "Kernel number"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Number of grains expressed as per unit area or sample."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Grain number"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000020
+<http://www.cropontology.org/rdf/CO_321:0000020> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "PH"@en ;
+                                                 rdfs:label "Plant height"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Height of plant from ground to top of spike, excluding awns."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Plant height"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000025
+<http://www.cropontology.org/rdf/CO_321:0000025> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "GW"@en ;
+                                                 rdfs:label "Grain weight"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#altLabel> "kernel weight"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Grain weight usually expressed as weight of single, one hundred, two hundred or thousand grains."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Grain weight"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000038
+<http://www.cropontology.org/rdf/CO_321:0000038> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "GrnSpk"@en ;
+                                                 rdfs:label "Grain number per spike"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#altLabel> " grains per spike"@en ,
+                                                                                                "Kernel number per spike"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Number of grains per spike."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Grain number per spike"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000039
+<http://www.cropontology.org/rdf/CO_321:0000039> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "GPlump"@en ;
+                                                 rdfs:label "Grain plumpness"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "The degree of endosperm filling."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Grain plumpness"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000041
+<http://www.cropontology.org/rdf/CO_321:0000041> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "GrnSpl"@en ;
+                                                 rdfs:label "Grain number per spikelet"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#altLabel> "Kernel number per spikelet"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Number of grains per spikelet."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Grain number per spikelet"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000050
+<http://www.cropontology.org/rdf/CO_321:0000050> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "NeckBreak"@en ;
+                                                 rdfs:label "Peduncle neck break"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Observation of spike break from the base of head."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Peduncle neck break"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000057
+<http://www.cropontology.org/rdf/CO_321:0000057> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "Shattering"@en ;
+                                                 rdfs:label "Spike shattering"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Observation of grains dehiscence from spike at maturity."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Spike shattering"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000058
+<http://www.cropontology.org/rdf/CO_321:0000058> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "SplN"@en ;
+                                                 rdfs:label "Spikelet number"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Number of spikelets per spike."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Spikelet number"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000123
+<http://www.cropontology.org/rdf/CO_321:0000123> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "HI"@en ;
+                                                 rdfs:label "Harvest index"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#altLabel> "Biomass partitioning to grain"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "A ratio of grain yield to total above ground biomass."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Harvest index"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000162
+<http://www.cropontology.org/rdf/CO_321:0000162> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "AgrScr"@en ;
+                                                 rdfs:label "Agronomic score"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#altLabel> "Phenotypic acceptability"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Rating of overall agronomic attributes and health of plants."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Agronomic score"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000165
+<http://www.cropontology.org/rdf/CO_321:0000165> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "SpkSterility"@en ;
+                                                 rdfs:label "Spike sterility index"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Spike sterility observed as infertile florets."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Spike sterility index"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000166
+<http://www.cropontology.org/rdf/CO_321:0000166> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "SN"@en ;
+                                                 rdfs:label "Spike number"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#altLabel> "Ear number"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Number of spikes (fertile culms) per unit area, sample or plant."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Spike number"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000167
+<http://www.cropontology.org/rdf/CO_321:0000167> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "Lodg"@en ;
+                                                 rdfs:label "Lodging incidence"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Indicates incidence of lodged plants."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Lodging incidence"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000184
+<http://www.cropontology.org/rdf/CO_321:0000184> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "LAI"@en ;
+                                                 rdfs:label "Leaf area index"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "It is a dimensionless quantity that characterizes plant canopies and defined as the leaf area per unit ground surface area."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Leaf area index"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000186
+<http://www.cropontology.org/rdf/CO_321:0000186> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "HNecro"@en ;
+                                                 rdfs:label "Plant hybrid necrosis incidence"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#altLabel> "Dwarf clumping"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Observation of hybrid necrosis."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Plant hybrid necrosis incidence"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000187
+<http://www.cropontology.org/rdf/CO_321:0000187> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "PlntStnd"@en ;
+                                                 rdfs:label "Plant stand"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#altLabel> " Crop stand"@en ,
+                                                                                                " Plant density"@en ,
+                                                                                                " Plant population"@en ,
+                                                                                                "Plant establishment"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Plant population or plant density."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Plant stand"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000189
+<http://www.cropontology.org/rdf/CO_321:0000189> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "TllrCapacity"@en ;
+                                                 rdfs:label "Tillering capacity"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#altLabel> "Plant Tillering capacity"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "An tillering capacity."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Tillering capacity"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000190
+<http://www.cropontology.org/rdf/CO_321:0000190> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "TN"@en ;
+                                                 rdfs:label "Tiller number"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Number of total tillers (fertile and infertile) per unit area, sample or plant."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Tiller number"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000301
+<http://www.cropontology.org/rdf/CO_321:0000301> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Physiological%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "NDVI"@en ;
+                                                 rdfs:label "Canopy normalized difference vegetation index"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Physiological%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Normalized difference vegetation index is used to measure vegetative greenness and canopy photosynthetic size."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Canopy normalized difference vegetation index"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000362
+<http://www.cropontology.org/rdf/CO_321:0000362> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/Computation> ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://www.cropontology.org/rdf/method_of> ;
+                                                                   owl:someValuesFrom <http://www.cropontology.org/rdf/CO_321:0000184>
+                                                                 ] ;
+                                                 <http://www.cropontology.org/rdf/method_of> <http://www.cropontology.org/rdf/CO_321:0000184> ;
+                                                 rdfs:label "LAI Computation"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/Computation> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "LAI can be determined directly by taking a sample of canopy from a plant canopy, measuring the leaf area per sample plot with an area meter or image scanner and dividing it by the plot land surface area. Indirect methods use ceptometer to measure canopy geometry or light extinction and relate it to LAI. (LAI = leaf area / ground area, m2 / m2)."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "LAI Computation"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000393
+<http://www.cropontology.org/rdf/CO_321:0000393> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "ISBM"@en ;
+                                                 rdfs:label "In-season aboveground biomass"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "All above-ground biomass at any developmental stage and/or at regular intervals from the emergence to physiological maturity."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "In-season aboveground biomass"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000421
+<http://www.cropontology.org/rdf/CO_321:0000421> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/Numerical> ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://www.cropontology.org/rdf/scale_of> ;
+                                                                   owl:someValuesFrom <http://www.cropontology.org/rdf/CO_321:0000362>
+                                                                 ] ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://www.cropontology.org/rdf/scale_of> ;
+                                                                   owl:someValuesFrom <http://www.cropontology.org/rdf/CO_321:0000984>
+                                                                 ] ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://www.cropontology.org/rdf/scale_of> ;
+                                                                   owl:someValuesFrom <http://www.cropontology.org/rdf/CO_321:0000985>
+                                                                 ] ;
+                                                 <http://www.cropontology.org/rdf/scale_of> <http://www.cropontology.org/rdf/CO_321:0000362> ,
+                                                                                            <http://www.cropontology.org/rdf/CO_321:0000984> ,
+                                                                                            <http://www.cropontology.org/rdf/CO_321:0000985> ;
+                                                 rdfs:label "index"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/Numerical> ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "index"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000642
+<http://www.cropontology.org/rdf/CO_321:0000642> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "GReten"@en ;
+                                                 rdfs:label "Grain retention"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Proportion of big grain remaining above the sieve."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Grain retention"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000643
+<http://www.cropontology.org/rdf/CO_321:0000643> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "GScreen"@en ;
+                                                 rdfs:label "Grain screenings"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Proportion of small grain passing through a sieve."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Grain screenings"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000644
+<http://www.cropontology.org/rdf/CO_321:0000644> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "InfertTN"@en ;
+                                                 rdfs:label "Infertile tiller number"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Number of infertile tillers  per unit area, sample or plant."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Infertile tiller number"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000645
+<http://www.cropontology.org/rdf/CO_321:0000645> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "GYFac"@en ;
+                                                 rdfs:label "Grain yield factor"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Yield factor."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Grain yield factor"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000680
+<http://www.cropontology.org/rdf/CO_321:0000680> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "PlntVig"@en ;
+                                                 rdfs:label "Plant vigour"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#altLabel> "Plant vigor"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Capacity of the plant to grow."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Plant vigour"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000961
+<http://www.cropontology.org/rdf/CO_321:0000961> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Physiological%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "GNDVI"@en ;
+                                                 rdfs:label "Canopy green normalized difference vegetation index"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Physiological%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Normalized difference vegetation index is used to measure vegetative greenness and canopy photosynthetic size."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Canopy green normalized difference vegetation index"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000962
+<http://www.cropontology.org/rdf/CO_321:0000962> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Physiological%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "RNDVI"@en ;
+                                                 rdfs:label "Canopy red normalized difference vegetation index"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Physiological%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Normalized difference vegetation index is used to measure vegetative greenness and canopy photosynthetic size."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Canopy red normalized difference vegetation index"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000972
+<http://www.cropontology.org/rdf/CO_321:0000972> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "StdEst"@en ;
+                                                 rdfs:label "Stand establishment"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Measurement of plant emergence and vigor in the field."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Stand establishment"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000974
+<http://www.cropontology.org/rdf/CO_321:0000974> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "StrawBreak"@en ;
+                                                 rdfs:label "Straw breakage"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Amount of straw breakage."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Straw breakage"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000976
+<http://www.cropontology.org/rdf/CO_321:0000976> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "StrawStn"@en ;
+                                                 rdfs:label "Straw strength"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Strength of straw."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Straw strength"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000977
+<http://www.cropontology.org/rdf/CO_321:0000977> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "StrawYld"@en ;
+                                                 rdfs:label "Straw yield"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Amount (weight) of straw."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Straw yield"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000982
+<http://www.cropontology.org/rdf/CO_321:0000982> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "AnthExt"@en ;
+                                                 rdfs:label "Anther extrusion"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Extrusion of anthers."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Anther extrusion"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000984
+<http://www.cropontology.org/rdf/CO_321:0000984> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/Measurement> ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://www.cropontology.org/rdf/method_of> ;
+                                                                   owl:someValuesFrom <http://www.cropontology.org/rdf/CO_321:0000961>
+                                                                 ] ;
+                                                 <http://www.cropontology.org/rdf/method_of> <http://www.cropontology.org/rdf/CO_321:0000961> ;
+                                                 rdfs:label "GNDVI Measurement"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/Measurement> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Standard method for spectral reflectance."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "GNDVI Measurement"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0000985
+<http://www.cropontology.org/rdf/CO_321:0000985> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/Measurement> ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://www.cropontology.org/rdf/method_of> ;
+                                                                   owl:someValuesFrom <http://www.cropontology.org/rdf/CO_321:0000962>
+                                                                 ] ;
+                                                 <http://www.cropontology.org/rdf/method_of> <http://www.cropontology.org/rdf/CO_321:0000962> ;
+                                                 rdfs:label "RNDVI Measurement"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/Measurement> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Standard method for spectral reflectance."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "RNDVI Measurement"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0001032
+<http://www.cropontology.org/rdf/CO_321:0001032> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "ForgDM"@en ;
+                                                 rdfs:label "Forage dry matter"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Forage dry matter."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Forage dry matter"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0001081
+<http://www.cropontology.org/rdf/CO_321:0001081> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/Variable> ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://www.cropontology.org/rdf/variable_of> ;
+                                                                   owl:someValuesFrom <http://www.cropontology.org/rdf/CO_321:0000301>
+                                                                 ] ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://www.cropontology.org/rdf/variable_of> ;
+                                                                   owl:someValuesFrom <http://www.cropontology.org/rdf/CO_321:0000421>
+                                                                 ] ;
+                                                 <http://www.cropontology.org/rdf/variable_of> <http://www.cropontology.org/rdf/CO_321:0000301> ,
+                                                                                               <http://www.cropontology.org/rdf/CO_321:0000421> ;
+                                                 rdfs:label "NDVI_M_Idx"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#altLabel> "NDVI_index"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/Variable> ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "NDVI_M_Idx"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0001254
+<http://www.cropontology.org/rdf/CO_321:0001254> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/Variable> ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://www.cropontology.org/rdf/variable_of> ;
+                                                                   owl:someValuesFrom <http://www.cropontology.org/rdf/CO_321:0000184>
+                                                                 ] ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://www.cropontology.org/rdf/variable_of> ;
+                                                                   owl:someValuesFrom <http://www.cropontology.org/rdf/CO_321:0000362>
+                                                                 ] ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://www.cropontology.org/rdf/variable_of> ;
+                                                                   owl:someValuesFrom <http://www.cropontology.org/rdf/CO_321:0000421>
+                                                                 ] ;
+                                                 <http://www.cropontology.org/rdf/variable_of> <http://www.cropontology.org/rdf/CO_321:0000184> ,
+                                                                                               <http://www.cropontology.org/rdf/CO_321:0000362> ,
+                                                                                               <http://www.cropontology.org/rdf/CO_321:0000421> ;
+                                                 rdfs:label "LAI_Calc_Idx"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#altLabel> "LAI_index"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/Variable> ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "LAI_Calc_Idx"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0001454
+<http://www.cropontology.org/rdf/CO_321:0001454> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/Variable> ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://www.cropontology.org/rdf/variable_of> ;
+                                                                   owl:someValuesFrom <http://www.cropontology.org/rdf/CO_321:0000421>
+                                                                 ] ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://www.cropontology.org/rdf/variable_of> ;
+                                                                   owl:someValuesFrom <http://www.cropontology.org/rdf/CO_321:0000961>
+                                                                 ] ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://www.cropontology.org/rdf/variable_of> ;
+                                                                   owl:someValuesFrom <http://www.cropontology.org/rdf/CO_321:0000984>
+                                                                 ] ;
+                                                 <http://www.cropontology.org/rdf/variable_of> <http://www.cropontology.org/rdf/CO_321:0000421> ,
+                                                                                               <http://www.cropontology.org/rdf/CO_321:0000961> ,
+                                                                                               <http://www.cropontology.org/rdf/CO_321:0000984> ;
+                                                 rdfs:label "GNDVI_M_Idx"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#altLabel> "GNDVI_index"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/Variable> ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "GNDVI_M_Idx"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0001455
+<http://www.cropontology.org/rdf/CO_321:0001455> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/Variable> ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://www.cropontology.org/rdf/variable_of> ;
+                                                                   owl:someValuesFrom <http://www.cropontology.org/rdf/CO_321:0000421>
+                                                                 ] ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://www.cropontology.org/rdf/variable_of> ;
+                                                                   owl:someValuesFrom <http://www.cropontology.org/rdf/CO_321:0000962>
+                                                                 ] ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://www.cropontology.org/rdf/variable_of> ;
+                                                                   owl:someValuesFrom <http://www.cropontology.org/rdf/CO_321:0000985>
+                                                                 ] ;
+                                                 <http://www.cropontology.org/rdf/variable_of> <http://www.cropontology.org/rdf/CO_321:0000421> ,
+                                                                                               <http://www.cropontology.org/rdf/CO_321:0000962> ,
+                                                                                               <http://www.cropontology.org/rdf/CO_321:0000985> ;
+                                                 rdfs:label "RNDVI_M_Idx"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#altLabel> "RNDVI_index"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/Variable> ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "RNDVI_M_Idx"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0001484
+<http://www.cropontology.org/rdf/CO_321:0001484> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "InfertSpkN"@en ;
+                                                 rdfs:label "Infertile spike number"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Number of infertile spikelet per spike."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Infertile spike number"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0001486
+<http://www.cropontology.org/rdf/CO_321:0001486> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "GYPR"@en ;
+                                                 rdfs:label "Grain yield production rate"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Grain yield production rate."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Grain yield production rate"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0001487
+<http://www.cropontology.org/rdf/CO_321:0001487> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "BMPR"@en ;
+                                                 rdfs:label "Biomass production rate"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Biomass production rate."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Biomass production rate"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0001523
+<http://www.cropontology.org/rdf/CO_321:0001523> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "SpkDW"@en ;
+                                                 rdfs:label "Spike dry weight"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Dry weight of spike(s)."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Spike dry weight"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0001526
+<http://www.cropontology.org/rdf/CO_321:0001526> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "SpkGW"@en ;
+                                                 rdfs:label "Grain weight per spike"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Grain weight per spike."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Grain weight per spike"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0001652
+<http://www.cropontology.org/rdf/CO_321:0001652> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "GRATIL"@en ;
+                                                 rdfs:label "Grain number per tiller"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Number of grains per tiller."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Grain number per tiller"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:0001653
+<http://www.cropontology.org/rdf/CO_321:0001653> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.cropontology.org/rdf/acronym> "GWTTILL"@en ;
+                                                 rdfs:label "Grain weight per tiller"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Grain weight per tiller."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Grain weight per tiller"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:Agronomical%20traits
+<http://www.cropontology.org/rdf/CO_321:Agronomical%20traits> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:ROOT> ;
+                                                              rdfs:label "Agronomical traits"@en ;
+                                                              <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:ROOT> ;
+                                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "Agronomical traits"@en .
+
+
+###  http://www.cropontology.org/rdf/CO_321:Physiological%20traits
+<http://www.cropontology.org/rdf/CO_321:Physiological%20traits> rdf:type owl:Class ;
+                                                                rdfs:subClassOf <http://www.cropontology.org/rdf/CO_321:ROOT> ;
+                                                                rdfs:label "Physiological traits"@en ;
+                                                                <http://www.w3.org/2004/02/skos/core#broaderTransitive> <http://www.cropontology.org/rdf/CO_321:ROOT> ;
+                                                                <http://www.w3.org/2004/02/skos/core#prefLabel> "Physiological traits"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
